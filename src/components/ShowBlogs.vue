@@ -22,14 +22,14 @@ export default {
     return {
       msg: "博客总览",
       blogs: [],
-      search: "",
+      search: "", 
     }
   },
   created(){//获取数据
     var url = '/admin/Blog/showBlogs';
-    this.$http.get(url).then(function(response){
-      //console.log(response);
-      this.blogs = response.body;
+    this.$axios.get(url).then((response)=>{
+      console.log(response);
+      this.blogs = response.data;
     });
   },
   computed:{

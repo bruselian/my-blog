@@ -5,11 +5,12 @@ import App from './App'
 import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
 import Routes from '../router/'
+import axios from 'axios'
 
 Vue.config.productionTip = false
 Vue.use(VueResource);
 Vue.use(VueRouter);
-
+Vue.prototype.$axios = axios
 //自定义一个全局指令
 /**
 * 第一个参数是指令的名称

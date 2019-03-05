@@ -47,6 +47,9 @@
 </template>
 
 <script>
+
+import axios from 'axios'
+
 export default {
   name: 'add-blog',
   data () {
@@ -66,9 +69,9 @@ export default {
     post: function () {
       var url = '/admin/Blog/addBlog';
       var data = {title: this.blog.title, content: this.blog.content, categories: this.blog.categories, author: this.blog.author}
-      this.$http.post(url,data).then(function(result){
+      axios.post(url,data).then((result)=>{
         console.log(result);
-        if (result.body.status){
+        if (result.data.status){
           this.submited = true;
         }
       })
