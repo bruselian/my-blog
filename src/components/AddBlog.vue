@@ -67,9 +67,7 @@ export default {
   },
   methods:{
     post: function () {
-      var url = '/admin/Blog/addBlog';
-      var data = {title: this.blog.title, content: this.blog.content, categories: this.blog.categories, author: this.blog.author}
-      axios.post(url,data).then((result)=>{
+      axios.post("/admin/Blog/addBlog",this.blog).then((result)=>{
         console.log(result);
         if (result.data.status){
           this.submited = true;
